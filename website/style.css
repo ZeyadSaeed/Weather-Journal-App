@@ -476,4 +476,12 @@ h4 {
     .error__area ion-icon {
         margin: 1rem auto;
     }
+    .error__area__two h2 {
+        font-size: 2rem;
+        margin: 1rem;
+    }
+    .error__area__two ion-icon {
+        font-size: 7rem;
+        margin: 1rem auto;
+    }
 }

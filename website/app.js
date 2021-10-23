@@ -23,13 +23,6 @@ generateButton.addEventListener("click", action);
 
 // Function called by event listener
 function action(e) {
-  if (zipCode.value.length === 5) {
-    resultArea.style.top = 0;
-    errorArea.style.top = 0;
-  } else {
-    errorArea.style.top = "-100%";
-    resultArea.style.top = "50rem";
-  }
   // function to get the data
   getWeather(baseUrl + zipCode.value + key);
   // output the feeling to the user
@@ -43,6 +36,21 @@ const getWeather = async (url = baseUrl + zipCode.value + key) => {
   const req = await fetch(url)
     .then((res) => res.json())
     .then((data) => {
+      // make error massage if any errors
+      if (data.cod !== 200) {
+        resultArea.style.top = "50rem";
+        errorArea.style.top = 0;
+        errorAreaTwo.style.top = "-212%";
+        errorAreaTwo.innerHTML = `
+        <h2>${data.message}</h2>
+        <ion-icon name="sad-outline"></ion-icon>
+        `;
+      } else {
+        // if no errors preview the result
+        resultArea.style.top = 0;
+        errorArea.style.top = 0;
+        errorAreaTwo.style.top = 0;
+      }
       // getting specific data from object Es6
       const {
         main: { temp: temp },
@@ -63,6 +71,7 @@ const getWeather = async (url = baseUrl + zipCode.value + key) => {
     });
 };
 
+// post data to the server
 const postData = async (url = "", data = {}) => {
   const res = await fetch("/add", {
     method: "POST",
@@ -76,15 +85,16 @@ const postData = async (url = "", data = {}) => {
     const newData = await res.json();
     return newData;
   } catch (err) {
+    // catch if any errors
     console.log("error", err);
   }
 };
 
+// print the result to the user
 const updateUI = async () => {
   const res = await fetch("/all");
   try {
     const allData = await res.json();
-    console.log(allData);
     temp.innerHTML = `${allData.temp}&deg;`;
     country.innerHTML = `${allData.country}`;
     cloud.innerHTML = `${allData.cloud} <ion-icon name="cloud-outline"></ion-icon>`;
