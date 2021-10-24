@@ -1,56 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather Journal</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <!-- link for the font -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet">
-</head>
-<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <div class="header">
-        <h1>Weather Journal App</h1>
+      <h1>Weather Journal App</h1>
     </div>
     <div class="container">
-        <div class="form__text">
-            <div class="zip__area">
-                <input id="zip" type="number" placeholder="enter zip code here">
-            </div>
-            <div class="text__area">
-                <input type="text" id="feelings" placeholder="Enter your feeling here">
-            </div>
+      <div class="form__text">
+        <div class="zip__area">
+          <input id="zip" type="number" placeholder="enter zip code here" />
         </div>
-        <div class="btn__area">
-            <button id="generate">Generate</button>
+        <div class="text__area">
+          <input
+            type="text"
+            id="feelings"
+            placeholder="Enter your feeling here"
+          />
         </div>
-        <div class="result__area">
-            <div id="entryHolder">
-                <h4>Most Recent Entry</h4>
-                <div class="country__containee">
-                    <div id="country"></div>
-                    <div id="date"></div>
-                </div>
-                <div class="temp__container">
-                    <div id="temp"></div>
-                    <div id="cloud"></div>
-                </div>
-                <div id="content"></div>
-            </div>
+      </div>
+      <div class="btn__area">
+        <button id="generate">Generate</button>
+      </div>
+      <div class="result__area">
+        <div id="entryHolder">
+          <h4>Most Recent Entry</h4>
+          <div class="country__containee">
+            <div id="country"></div>
+            <div id="date"></div>
+          </div>
+          <div class="temp__container">
+            <div id="temp"></div>
+            <div id="cloud"></div>
+          </div>
+          <div id="content"></div>
         </div>
-        <div class="error__area">
-            <ion-icon name="chevron-up-outline"></ion-icon>
-            <h3>Please put valid zip code</h3>
-        </div>
-        <div class="error__area__two">
-        </div>
+      </div>
+      <div class="error__area">
+        <ion-icon name="chevron-up-outline"></ion-icon>
+        <h3>Please put valid zip code</h3>
+      </div>
+      <div class="error__area__two"></div>
     </div>
     <!-- link to icons -->
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
     <script src="app.js"></script>
-</body>
+  </body>
 </html>
