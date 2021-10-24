@@ -10,7 +10,6 @@ const zipCode = document.getElementById("zip");
 const userFeeling = document.getElementById("content");
 const errorArea = document.querySelector(".error__area");
 const errorAreaTwo = document.querySelector(".error__area__two");
-
 // put the current date to the user
 let today = new Date().toLocaleDateString();
 
